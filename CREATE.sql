@@ -11,7 +11,7 @@ CREATE TABLE OSOBY (
     osoba_id             NUMBER(6) CONSTRAINT osoby_pk PRIMARY KEY,
     imie                 VARCHAR2(30),
     nazwisko             VARCHAR2(30),
-    PESEL		 NUMBER(11),
+    PESEL		 		 NUMBER(11),
     telefon              NUMBER(9),
     adres_id             NUMBER(6) NOT NULL,
     CONSTRAINT os_adresy_fk FOREIGN KEY (adres_id) REFERENCES ADRESY(adres_id),
@@ -23,7 +23,7 @@ CREATE TABLE BIURO_AGENCJI (
     biuro_id			   NUMBER(6) CONSTRAINT biuro_agencji_pk PRIMARY KEY,
     biuro_nazwa			   VARCHAR2(30),
     rok_zalozenia 		   NUMBER(4),
-    telefon			   NUMBER(9),
+    telefon			  	 NUMBER(9),
     NIP				   NUMBER(10),
     adres_id 			   NUMBER(6) NOT NULL,
     CONSTRAINT ba_adresy_fk FOREIGN KEY (adres_id) REFERENCES ADRESY(adres_id),
@@ -33,8 +33,7 @@ CREATE TABLE BIURO_AGENCJI (
 
 CREATE TABLE ROLE (
     rola_id            NUMBER(6) CONSTRAINT role_pk PRIMARY KEY,
-    nazwa_roli         VARCHAR2(30),
-    opis               VARCHAR2(50) 
+    nazwa_roli         VARCHAR2(30)
 );
 
 CREATE TABLE PRACOWNICY_AGENCJI (
@@ -50,7 +49,7 @@ CREATE TABLE PRACOWNICY_AGENCJI (
 
 CREATE TABLE USLUGI (
     usluga_id            NUMBER(6) CONSTRAINT uslugi_pk PRIMARY KEY,
-    nazwa_uslugi         VARCHAR2(30),
+    nazwa_uslugi         VARCHAR2(50),
     cena_uslugi          NUMBER(6)
 );
 
