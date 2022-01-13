@@ -25,8 +25,6 @@ CREATE TABLE BIURO_AGENCJI (
     rok_zalozenia 		   NUMBER(4),
     telefon			  	 NUMBER(9),
     NIP				   NUMBER(10),
-    adres_id 			   NUMBER(6) NOT NULL,
-    CONSTRAINT ba_adresy_fk FOREIGN KEY (adres_id) REFERENCES ADRESY(adres_id),
     UNIQUE(NIP),
     UNIQUE(telefon)	
  );
@@ -80,7 +78,7 @@ CREATE TABLE OFERTA_AGENCJI (
     oferta_id          		NUMBER(6) CONSTRAINT oferta_agencji_pk PRIMARY KEY,
     biuro_id     		NUMBER(6) NOT NULL,
     usluga_id                   NUMBER(6) NOT NULL,
-    dane_nieruchomosci_id	NUMBER(6) NOT NULL,
+    dane_nieruchomosci_id	NUMBER(6),
     CONSTRAINT oa_biuro_fk FOREIGN KEY (biuro_id) REFERENCES BIURO_AGENCJI(biuro_id),
     CONSTRAINT oa_uslugi_fk FOREIGN KEY (usluga_id) REFERENCES USLUGI(usluga_id),
     CONSTRAINT oa_dane_nieruchomosci_fk FOREIGN KEY (dane_nieruchomosci_id) REFERENCES DANE_NIERUCHOMOSCI(dane_nieruchomosci_id)
