@@ -1,4 +1,4 @@
-INSERT INTO ADRESY VALUES (1, 'Lwowska', '15', NULL, '08-123', 'Siedlce');
+INSERT INTO ADRESY VALUES (1, 'Lwowska', '15', NULL, '08-123', 'Radom');
 INSERT INTO ADRESY VALUES (2, 'Katedralna', '15', '7', '15-340', 'Białystok');
 INSERT INTO ADRESY VALUES (3, 'Lipowa', '154', NULL, '26-680', 'Radom');
 INSERT INTO ADRESY VALUES (4, 'Szkolna', '88', '117', '20-209', 'Lublin');
@@ -31,8 +31,14 @@ INSERT INTO ADRESY VALUES (30, 'Mała', '1', NULL, '82-203', 'Tarnobrzeg');
 INSERT INTO ADRESY VALUES (31, 'Podchorążych', '87', '3', '98-203', 'Warszawa');
 INSERT INTO ADRESY VALUES (32, 'Kielecka', '52', NULL, '82-304', 'Ostrowiec Świętokrzyski');
 INSERT INTO ADRESY VALUES (33, 'Reymonta', '77', '12', '82-203', 'Suchedniów');
-INSERT INTO ADRESY VALUES (34, 'Daleka', '12', NULL, '82-034', 'Ostrów Wielkopolski');
-INSERT INTO ADRESY VALUES (35, 'Szkolna', '14', NULL, '12-003', 'Poznań');
+INSERT INTO ADRESY VALUES (34, 'Jaworowa', '12', NULL, '82-034', 'Ostrów Wielkopolski');
+INSERT INTO ADRESY VALUES (35, 'Reja', '26', '15', '62-003', 'Wrocław');
+INSERT INTO ADRESY VALUES (36, 'Wileńska', '22', NULL, '02-234', 'Kielce');
+INSERT INTO ADRESY VALUES (37, 'Żniwna', '114', '82', '92-304', 'Gdynia');
+INSERT INTO ADRESY VALUES (38, 'Legnicka', '234', NULL, '12-003', 'Starachowice');
+INSERT INTO ADRESY VALUES (39, 'Poleska', '123', NULL, '02-345', 'Warszawa');
+INSERT INTO ADRESY VALUES (40, 'Mazurska', '56', '12', '29-203', 'Kielce');
+
 
 INSERT INTO OSOBY VALUES (1, 'Adam', 'Nowak', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 1);
 INSERT INTO OSOBY VALUES (2, 'Joanna', 'Robak', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 2);
@@ -59,13 +65,22 @@ INSERT INTO OSOBY VALUES (22, 'Kaja', 'Bąk', (SELECT dbms_random.value(10000000
 INSERT INTO OSOBY VALUES (23, 'Janusz', 'Kaźmerczak', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 23);
 INSERT INTO OSOBY VALUES (24, 'Halina', 'Sokołowska', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 24);
 INSERT INTO OSOBY VALUES (25, 'Ryszard', 'Cieślak', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 25);
+INSERT INTO OSOBY VALUES (26, 'Amir', 'Kucharski', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 26);
+INSERT INTO OSOBY VALUES (27, 'Anastazy', 'Włodarski', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 27);
+INSERT INTO OSOBY VALUES (28, 'Borys', 'Duda', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 28);
+INSERT INTO OSOBY VALUES (29, 'Klaudiusz', 'Walczak', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 29);
+INSERT INTO OSOBY VALUES (30, 'Miłosz', 'Zawadzki', (SELECT dbms_random.value(10000000000, 99999999999) as "pesel" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), 30);
 
-INSERT INTO BIURO_AGENCJI VALUES (1, 'NieruchoPol', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual), 26);
-INSERT INTO BIURO_AGENCJI VALUES (2, 'NieruchoMex', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual), 27);
-INSERT INTO BIURO_AGENCJI VALUES (3, 'NieruchomościoPol', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual), 28);
-INSERT INTO BIURO_AGENCJI VALUES (4, 'Agencik', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual), 29);
-INSERT INTO BIURO_AGENCJI VALUES (5, 'Agentex', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual), 30);
-INSERT INTO BIURO_AGENCJI VALUES (6, 'Agentownia', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual), 31);
+INSERT INTO BIURO_AGENCJI VALUES (1, 'NieruchoPol', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (2, 'NieruchoMex', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (3, 'NieruchomościoPol', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (4, 'Agencik', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (5, 'Agentex', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (6, 'Agentownia', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+\INSERT INTO BIURO_AGENCJI VALUES (7, 'Hepal', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (8, 'Greathouse', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (9, 'Pololocum', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (10, 'WKDom', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
 
 
 INSERT INTO ROLE VALUES (1, 'Konsultant telefoniczny');
@@ -93,7 +108,7 @@ INSERT INTO PRACOWNICY_AGENCJI VALUES (6, 6, 3, 6, (SELECT dbms_random.value(1, 
 INSERT INTO PRACOWNICY_AGENCJI VALUES (7, 7, 4, 7, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (8, 8, 4, 8, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (9, 9, 5, 9, (SELECT dbms_random.value(1, 15) as "staz" from dual));
-INSERT INTO PRACOWNICY_AGENCJI VALUES (10, 10, 6, 10, (SELECT dbms_random.value(1, 15) as "staz" from dual));
+INSERT INTO PRACOWNICY_AGENCJI VALUES (10, 10, 7, 10, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 
 INSERT INTO USLUGI VALUES (1, 'Sprzedaż mieszkania', '2500');
 INSERT INTO USLUGI VALUES (2, 'Sprzedaż działki', '3000');
@@ -138,21 +153,39 @@ INSERT INTO WLASCICIEL_NIERUCHOMOSCI VALUES (8, 18);
 INSERT INTO WLASCICIEL_NIERUCHOMOSCI VALUES (9, 19);
 INSERT INTO WLASCICIEL_NIERUCHOMOSCI VALUES (10, 20);
 
-INSERT INTO DANE_NIERUCHOMOSCI VALUES (1, 1, 1, 32, 1500, 10);
-INSERT INTO DANE_NIERUCHOMOSCI VALUES (2, 2, 2, 33, 1000, 3);
-INSERT INTO DANE_NIERUCHOMOSCI VALUES (3, 3, 3, 34, 1200, 5);
-INSERT INTO DANE_NIERUCHOMOSCI VALUES (4, 4, 4, 35, 65, NULL);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (1, 1, 10, 31, 1500, 10);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (2, 5, 8, 32, 100, 3);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (3, 3, 9, 33, 1200, 5);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (4, 4, 1, 34, 100, NULL);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (5, 4, 7, 35, 200, NULL);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (6, 7, 1, 36, 415, 3);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (7, 8, 2, 37, 500, 2);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (8, 9, 3, 38, 2000, 4);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (9, 10, 4, 39, 130, 2);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (10, 15, 5, 340, 500, 3);
+
 
 INSERT INTO OFERTA_AGENCJI VALUES (1, 6, 5, 4);
 INSERT INTO OFERTA_AGENCJI VALUES (2, 5, 5, 3);
 INSERT INTO OFERTA_AGENCJI VALUES (3, 4, 5, 2);
-INSERT INTO OFERTA_AGENCJI VALUES (4, 3, 5, 1);
+INSERT INTO OFERTA_AGENCJI VALUES (4, 2, 5, 1);
+INSERT INTO OFERTA_AGENCJI VALUES (5, 2, 5, 9);
+--INSERT INTO OFERTA_AGENCJI VALUES (6, 1, 5, 1);
+--INSERT INTO OFERTA_AGENCJI VALUES (7, 6, 5, 1);
+--INSERT INTO OFERTA_AGENCJI VALUES (8, 9, 5, 1);
+--INSERT INTO OFERTA_AGENCJI VALUES (9, 3, 5, 1);
+--INSERT INTO OFERTA_AGENCJI VALUES (10, 7, 5, 1);
 
 INSERT INTO KLIENT_AGENCJI VALUES (1, 21);
 INSERT INTO KLIENT_AGENCJI VALUES (2, 22);
 INSERT INTO KLIENT_AGENCJI VALUES (3, 23);
 INSERT INTO KLIENT_AGENCJI VALUES (4, 24);
 INSERT INTO KLIENT_AGENCJI VALUES (5, 25);
+INSERT INTO KLIENT_AGENCJI VALUES (6, 26);
+INSERT INTO KLIENT_AGENCJI VALUES (7, 27);
+INSERT INTO KLIENT_AGENCJI VALUES (8, 28);
+INSERT INTO KLIENT_AGENCJI VALUES (9, 29);
+INSERT INTO KLIENT_AGENCJI VALUES (10,30);
 
 INSERT INTO TRANSAKCJE VALUES (1, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 10, 5);
 INSERT INTO TRANSAKCJE VALUES (2, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 2, 9, 4);
