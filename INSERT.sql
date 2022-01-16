@@ -191,10 +191,10 @@ INSERT INTO TRANSAKCJE VALUES (1, (SELECT sysdate - round(dbms_random.value(1,21
 INSERT INTO TRANSAKCJE VALUES (2, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 2, 9, 4);
 INSERT INTO TRANSAKCJE VALUES (3, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 4, 8, 3);
 INSERT INTO TRANSAKCJE VALUES (4, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 3, 7, 2);
-INSERT INTO TRANSAKCJE VALUE  (5, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 1, 1);
-INSERT INTO TRANSAKCJE VALUE  (6, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 2, 1);
-INSERT INTO TRANSAKCJE VALUE  (7, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
-INSERT INTO TRANSAKCJE VALUE  (8, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
-INSERT INTO TRANSAKCJE VALUE  (9, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 8, 9);
-INSERT INTO TRANSAKCJE VALUE  (10, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),9, 5, 7);
-INSERT INTO TRANSAKCJE VALUE  (11, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),10, 10, 6);
+INSERT INTO TRANSAKCJE VALUES  (5, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 1, 1);
+INSERT INTO TRANSAKCJE VALUES  (6, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 2, 1);
+INSERT INTO TRANSAKCJE VALUES  (7, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
+INSERT INTO TRANSAKCJE VALUES  (8, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
+INSERT INTO TRANSAKCJE VALUES  (9, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 8, 9);
+INSERT INTO TRANSAKCJE VALUES  (10, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),9, 5, 7);
+INSERT INTO TRANSAKCJE VALUES  (11, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),10, 10, 6);
