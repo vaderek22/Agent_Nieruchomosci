@@ -77,7 +77,7 @@ INSERT INTO BIURO_AGENCJI VALUES (3, 'NieruchomościoPol', (SELECT dbms_random.v
 INSERT INTO BIURO_AGENCJI VALUES (4, 'Agencik', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
 INSERT INTO BIURO_AGENCJI VALUES (5, 'Agentex', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
 INSERT INTO BIURO_AGENCJI VALUES (6, 'Agentownia', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
-\INSERT INTO BIURO_AGENCJI VALUES (7, 'Hepal', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
+INSERT INTO BIURO_AGENCJI VALUES (7, 'Hepal', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
 INSERT INTO BIURO_AGENCJI VALUES (8, 'Greathouse', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
 INSERT INTO BIURO_AGENCJI VALUES (9, 'Pololocum', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
 INSERT INTO BIURO_AGENCJI VALUES (10, 'WKDom', (SELECT dbms_random.value(1990, 2021) as "rok" from dual), (SELECT dbms_random.value(100000000, 999999999) as "numer" from dual), (SELECT dbms_random.value(1000000000, 9999999999) as "nip" from dual));
@@ -99,14 +99,14 @@ INSERT INTO ROLE VALUES (13, 'Młodszy specjalista');
 INSERT INTO ROLE VALUES (14, 'Handlowiec');
 INSERT INTO ROLE VALUES (15, 'Doradca klienta');
 
-INSERT INTO PRACOWNICY_AGENCJI VALUES (1, 1, 1, 1, (SELECT dbms_random.value(1, 15) as "staz" from dual));
-INSERT INTO PRACOWNICY_AGENCJI VALUES (2, 2, 1, 2, (SELECT dbms_random.value(1, 15) as "staz" from dual));
+INSERT INTO PRACOWNICY_AGENCJI VALUES (1, 1, 1, 10, (SELECT dbms_random.value(1, 15) as "staz" from dual));
+INSERT INTO PRACOWNICY_AGENCJI VALUES (2, 2, 1, 10, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (3, 3, 2, 3, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (4, 4, 2, 4, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (5, 5, 3, 5, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (6, 6, 3, 6, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (7, 7, 4, 7, (SELECT dbms_random.value(1, 15) as "staz" from dual));
-INSERT INTO PRACOWNICY_AGENCJI VALUES (8, 8, 4, 8, (SELECT dbms_random.value(1, 15) as "staz" from dual));
+INSERT INTO PRACOWNICY_AGENCJI VALUES (8, 8, 9, 15, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (9, 9, 5, 9, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 INSERT INTO PRACOWNICY_AGENCJI VALUES (10, 10, 7, 10, (SELECT dbms_random.value(1, 15) as "staz" from dual));
 
@@ -162,19 +162,19 @@ INSERT INTO DANE_NIERUCHOMOSCI VALUES (6, 7, 1, 36, 415, 3);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (7, 8, 2, 37, 500, 2);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (8, 9, 3, 38, 2000, 4);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (9, 10, 4, 39, 130, 2);
-INSERT INTO DANE_NIERUCHOMOSCI VALUES (10, 15, 5, 340, 500, 3);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (10, 15, 5, 34, 500, 3);
 
 
-INSERT INTO OFERTA_AGENCJI VALUES (1, 6, 5, 4);
+INSERT INTO OFERTA_AGENCJI VALUES (1, 1, 5, 4);
 INSERT INTO OFERTA_AGENCJI VALUES (2, 5, 5, 3);
 INSERT INTO OFERTA_AGENCJI VALUES (3, 4, 5, 2);
 INSERT INTO OFERTA_AGENCJI VALUES (4, 2, 5, 1);
 INSERT INTO OFERTA_AGENCJI VALUES (5, 2, 5, 9);
---INSERT INTO OFERTA_AGENCJI VALUES (6, 1, 5, 1);
---INSERT INTO OFERTA_AGENCJI VALUES (7, 6, 5, 1);
---INSERT INTO OFERTA_AGENCJI VALUES (8, 9, 5, 1);
---INSERT INTO OFERTA_AGENCJI VALUES (9, 3, 5, 1);
---INSERT INTO OFERTA_AGENCJI VALUES (10, 7, 5, 1);
+INSERT INTO OFERTA_AGENCJI VALUES (6, 1, 1, 5);
+INSERT INTO OFERTA_AGENCJI VALUES (7, 3, 4, 8);
+INSERT INTO OFERTA_AGENCJI VALUES (8, 9, 9, NULL);
+INSERT INTO OFERTA_AGENCJI VALUES (9, 3, 5, 9);
+INSERT INTO OFERTA_AGENCJI VALUES (10, 7, 10, NULL);
 
 INSERT INTO KLIENT_AGENCJI VALUES (1, 21);
 INSERT INTO KLIENT_AGENCJI VALUES (2, 22);
@@ -191,3 +191,10 @@ INSERT INTO TRANSAKCJE VALUES (1, (SELECT sysdate - round(dbms_random.value(1,21
 INSERT INTO TRANSAKCJE VALUES (2, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 2, 9, 4);
 INSERT INTO TRANSAKCJE VALUES (3, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 4, 8, 3);
 INSERT INTO TRANSAKCJE VALUES (4, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 3, 7, 2);
+INSERT INTO TRANSAKCJE VALUE  (5, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 1, 1);
+INSERT INTO TRANSAKCJE VALUE  (6, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 2, 1);
+INSERT INTO TRANSAKCJE VALUE  (7, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
+INSERT INTO TRANSAKCJE VALUE  (8, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
+INSERT INTO TRANSAKCJE VALUE  (9, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 8, 9);
+INSERT INTO TRANSAKCJE VALUE  (10, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),9, 5, 7);
+INSERT INTO TRANSAKCJE VALUE  (11, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),10, 10, 6);
