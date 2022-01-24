@@ -74,14 +74,9 @@ CREATE TABLE DANE_NIERUCHOMOSCI (
     CONSTRAINT dn_adresy_fk FOREIGN KEY (adres_id) REFERENCES ADRESY(adres_id)
 );
 
-CREATE TABLE OFERTA_AGENCJI (
-    oferta_id          		NUMBER(6) CONSTRAINT oferta_agencji_pk PRIMARY KEY,
-    biuro_id     		NUMBER(6) NOT NULL,
-    usluga_id                   NUMBER(6) NOT NULL,
-    dane_nieruchomosci_id	NUMBER(6),
-    CONSTRAINT oa_biuro_fk FOREIGN KEY (biuro_id) REFERENCES BIURO_AGENCJI(biuro_id),
-    CONSTRAINT oa_uslugi_fk FOREIGN KEY (usluga_id) REFERENCES USLUGI(usluga_id),
-    CONSTRAINT oa_dane_nieruchomosci_fk FOREIGN KEY (dane_nieruchomosci_id) REFERENCES DANE_NIERUCHOMOSCI(dane_nieruchomosci_id)
+CREATE TABLE PLATNOSCI (
+    platnosci_id          		NUMBER(6) CONSTRAINT oferta_agencji_pk PRIMARY KEY,
+    forma_platnosci     		VARCHAR2(30)
 );
 
 CREATE TABLE KLIENT_AGENCJI (
@@ -93,10 +88,14 @@ CREATE TABLE KLIENT_AGENCJI (
 CREATE TABLE TRANSAKCJE (
     transakcja_id          		NUMBER(6) CONSTRAINT transakcje_pk PRIMARY KEY,
     data_transakcji 			DATE,
-    oferta_id   		        NUMBER(6) NOT NULL,
-    pracownik_id			NUMBER(6) NOT NULL,
+	usluga_id					NUMBER(6) NOT NULL,
+    pracownik_id				NUMBER(6) NOT NULL,
     klient_id			        NUMBER(6) NOT NULL,
-    CONSTRAINT tr_oferta_agencji_fk FOREIGN KEY (oferta_id) REFERENCES OFERTA_AGENCJI(oferta_id),
+	platnosci_id			    NUMBER(6) NOT NULL,
+	dane_nieruchomosci_id	    NUMBER(6),
+    CONSTRAINT tr_uslugi_fk FOREIGN KEY (usluga_id) REFERENCES USLUGI(usluga_id),
     CONSTRAINT tr_pracownicy_agencji_fk FOREIGN KEY (pracownik_id) REFERENCES PRACOWNICY_AGENCJI(pracownik_id),
-    CONSTRAINT tr_klient_agencji_fk FOREIGN KEY (klient_id) REFERENCES KLIENT_AGENCJI(klient_id)
+    CONSTRAINT tr_klient_agencji_fk FOREIGN KEY (klient_id) REFERENCES KLIENT_AGENCJI(klient_id),
+	CONSTRAINT tr_platnosci_fk FOREIGN KEY (platnosci_id) REFERENCES PLATNOSCI(platnosci_id),
+	CONSTRAINT tr_dane_nieruchomosci_fk FOREIGN KEY (dane_nieruchomosci_id) REFERENCES DANE_NIERUCHOMOSCI(dane_nieruchomosci_id)
 );

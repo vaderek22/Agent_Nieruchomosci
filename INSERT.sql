@@ -125,6 +125,7 @@ INSERT INTO USLUGI VALUES (12, 'Wycena nieruchomości komercyjnej', '800');
 INSERT INTO USLUGI VALUES (13, 'Wycena działki', '600');
 INSERT INTO USLUGI VALUES (14, 'Wycena mieszkania', '500');
 INSERT INTO USLUGI VALUES (15, 'Wycena domu', '700');
+INSERT INTO USLUGI VALUES (16, 'Sprzedaż bloku', '5000');
 
 INSERT INTO TYPY_NIERUCHOMOSCI VALUES (1, 'Blok');
 INSERT INTO TYPY_NIERUCHOMOSCI VALUES (2, 'Apartamentowiec');
@@ -155,7 +156,7 @@ INSERT INTO WLASCICIEL_NIERUCHOMOSCI VALUES (10, 20);
 
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (1, 1, 10, 31, 1500, 10);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (2, 5, 8, 32, 100, 3);
-INSERT INTO DANE_NIERUCHOMOSCI VALUES (3, 3, 9, 33, 1200, 5);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (3, 9, 9, 33, 1200, 5);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (4, 4, 1, 34, 100, NULL);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (5, 4, 7, 35, 200, NULL);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (6, 7, 1, 36, 415, 3);
@@ -163,18 +164,13 @@ INSERT INTO DANE_NIERUCHOMOSCI VALUES (7, 8, 2, 37, 500, 2);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (8, 9, 3, 38, 2000, 4);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (9, 10, 4, 39, 130, 2);
 INSERT INTO DANE_NIERUCHOMOSCI VALUES (10, 15, 5, 34, 500, 3);
+INSERT INTO DANE_NIERUCHOMOSCI VALUES (11, 11, 6, 35, 20000, NULL);
 
-
-INSERT INTO OFERTA_AGENCJI VALUES (1, 1, 5, 4);
-INSERT INTO OFERTA_AGENCJI VALUES (2, 5, 5, 3);
-INSERT INTO OFERTA_AGENCJI VALUES (3, 4, 5, 2);
-INSERT INTO OFERTA_AGENCJI VALUES (4, 2, 5, 1);
-INSERT INTO OFERTA_AGENCJI VALUES (5, 2, 5, 9);
-INSERT INTO OFERTA_AGENCJI VALUES (6, 1, 1, 5);
-INSERT INTO OFERTA_AGENCJI VALUES (7, 3, 4, 8);
-INSERT INTO OFERTA_AGENCJI VALUES (8, 9, 9, NULL);
-INSERT INTO OFERTA_AGENCJI VALUES (9, 3, 5, 9);
-INSERT INTO OFERTA_AGENCJI VALUES (10, 7, 10, NULL);
+INSERT INTO PLATNOSCI VALUES (1,'Gotowka');
+INSERT INTO PLATNOSCI VALUES (2,'Platnosc karta');
+INSERT INTO PLATNOSCI VALUES (3,'Przelew');
+INSERT INTO PLATNOSCI VALUES (4,'Kredyt hipoteczny');
+INSERT INTO PLATNOSCI VALUES (5,'Depozyt notarialny');
 
 INSERT INTO KLIENT_AGENCJI VALUES (1, 21);
 INSERT INTO KLIENT_AGENCJI VALUES (2, 22);
@@ -187,14 +183,14 @@ INSERT INTO KLIENT_AGENCJI VALUES (8, 28);
 INSERT INTO KLIENT_AGENCJI VALUES (9, 29);
 INSERT INTO KLIENT_AGENCJI VALUES (10,30);
 
-INSERT INTO TRANSAKCJE VALUES (1, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 10, 5);
-INSERT INTO TRANSAKCJE VALUES (2, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 2, 9, 4);
-INSERT INTO TRANSAKCJE VALUES (3, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 4, 8, 3);
-INSERT INTO TRANSAKCJE VALUES (4, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 3, 7, 2);
-INSERT INTO TRANSAKCJE VALUES  (5, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 1, 1);
-INSERT INTO TRANSAKCJE VALUES  (6, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 2, 1);
-INSERT INTO TRANSAKCJE VALUES  (7, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
-INSERT INTO TRANSAKCJE VALUES  (8, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 6, 1);
-INSERT INTO TRANSAKCJE VALUES  (9, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 8, 9);
-INSERT INTO TRANSAKCJE VALUES  (10, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),9, 5, 7);
-INSERT INTO TRANSAKCJE VALUES  (11, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual),10, 10, 6);
+INSERT INTO TRANSAKCJE VALUES (1, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 16, 10, 5, 3, 1);
+INSERT INTO TRANSAKCJE VALUES (2, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 8, 9, 4, 1, 7);
+INSERT INTO TRANSAKCJE VALUES (3, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 6, 8, 3, 4, 6);
+INSERT INTO TRANSAKCJE VALUES (4, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 7, 7, 2, 1, 11);
+INSERT INTO TRANSAKCJE VALUES (5, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 1, 1, 1, 3, 5);
+INSERT INTO TRANSAKCJE VALUES (6, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 15, 9, 10, 3, 10);
+INSERT INTO TRANSAKCJE VALUES (7, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 5, 6, 1, 3, 4);
+INSERT INTO TRANSAKCJE VALUES (8, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 9, 2, 1, 1, NULL);
+INSERT INTO TRANSAKCJE VALUES (9, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 4, 10, 8, 5, 3);
+INSERT INTO TRANSAKCJE VALUES (10, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 3, 5, 7, 1, 9);
+INSERT INTO TRANSAKCJE VALUES (11, (SELECT sysdate - round(dbms_random.value(1,21)) as "data" from dual), 10, 10, 6, 3, NULL);
